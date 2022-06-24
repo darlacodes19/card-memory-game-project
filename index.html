@@ -4,97 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <script defer src= script.js> </script> 
     <link rel = 'stylesheet' href="style.css"> 
+    <script defer src= script.js> </script> 
     <title>Memory Game</title>
 </head>
 <body>
-    <div class="title" >  
-    <h1 class="page-title"> Memory Game </h1>
-    </div>
+    
+
+        <h1 class="page-title"> Memory Game </h1>
+
+        <div class = "players" style="float:right; overflow:hidden; padding-right:200px">
+            Player 1 Name: <input type="text" id="txtPlayer1Name"/>
+            Player 2 Name: <input type="text" id="txtPlayer2Name"/>
+        </div>
+
     <div class="container-div"> 
-    <div class="cards-container">
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/fire_heart.PNG">
-        </div>
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/bubbly_face.PNG">
-        </div>
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/fries.PNG">
-        </div>
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/pasta.PNG">
-        </div>
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/selfie.PNG">
-        </div>
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/pleading_face.PNG">
-        </div>
-        <!-- <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/Capture.PNG">
-        </div> -->
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/donut.PNG">
-        </div>
-        <!-- <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/red_flag.PNG">
-        </div> -->
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/mending_heart.PNG">
-        </div>
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/fire_heart.PNG">
-        </div>
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/bubbly_face.PNG">
-        </div>
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/fries.PNG">
-        </div>
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/pasta.PNG">
-        </div>
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/selfie.PNG">
-        </div>
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/pleading_face.PNG">
-        </div>
-        <!-- <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/Capture.PNG">
-        </div> -->
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/donut.PNG">
-        </div>
-        <!-- <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/red_flag.PNG">
-        </div> -->
-        <div class="card">
-            <img class="back-face" src=" images/sunflower.png" >
-            <img class="front-face" src="images/mending_heart.PNG">
-        </div>
         
+        <div class="cards-container" >
+            <div class="card" data-framework = "fireheart">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/fire_heart.PNG">
+            </div>
+            <div class="card" data-framework=  "bubbly">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/bubbly_face.PNG">
+            </div>
+            <div class="card" data-framework=  "fries">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/fries.PNG">
+            </div>
+            <div class="card" data-framework= "pasta">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/pasta.PNG">
+            </div>
+            <div class="card" data-framework= "selfie">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/selfie.PNG">
+            </div>
+            <div class="card" data-framework= "pleading">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/pleading_face.PNG">
+            </div>
+        
+            <div class="card" data-framework= "donut">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/donut.PNG">
+            </div>
+        
+            <div class="card" data-framework= "mendingheart">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/mending_heart.PNG">
+            </div>
+            <div class="card" data-framework= "fireheart">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/fire_heart.PNG">
+            </div>
+            <div class="card" data-framework=  "bubbly">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/bubbly_face.PNG">
+            </div>
+            <div class="card" data-framework= "fries">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/fries.PNG">
+            </div>
+            <div class="card" data-framework= "pasta">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/pasta.PNG">
+            </div>
+            <div class="card" data-framework="selfie">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/selfie.PNG">
+            </div>
+            <div class="card" data-framework= "pleading">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/pleading_face.PNG">
+            </div>
+            
+            <div class="card" data-framework= "donut">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/donut.PNG">
+            </div>
+        
+            <div class="card" data-framework= "mendingheart">
+                <img class="back-face" src=" images/background.PNG" >
+                <img class="front-face" src="images/mending_heart.PNG">
+            </div>
+            
     </div>
 </div>
 
