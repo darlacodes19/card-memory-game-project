@@ -1,14 +1,20 @@
-// const myTimeout = setTimeout(myGreeting,3000)
 
-// function myGreeting() {
-//     let greeting = document.createTextNode ('Welcome to the game!');
-//     document.body.appendChild(greeting) 
-    
-// }
+let gameBoard = document.querySelector('.game-display');
+let playerOneScore = document.querySelector('.firstPlayer');
+let playerTwoScore = document.querySelector('.secondPlayer')
+const playerLivesCount = document.querySelector('span');
 
-// function stopGreeting () {
-//     clearTimeout(myTimeout)
-// }
+let firstPlayerScore = 0;
+let secondPlayerScore = 0;
+let playerLives = 10;
+let win = 0;
+let playerOneTurn = true;
+
+playerLivesCount.textContent = playerLives;
+playerOneScore.textContent = firstPlayerScore;
+playerTwoScore.textContent = secondPlayerScore;
+
+
 
 
 // select all cards and create a function that that loops through and attaches an event listener to each card 
@@ -37,19 +43,29 @@ function flipCard() {
       checkForMatch()
       
     }
+
+  
   }
 
   function checkForMatch() {
 
-    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    if (firstCard.dataset.framework === secondCard.dataset.framework) {
+      disableCards()
+      
+    } else {
+      unFlipCards()
+    }
     
-    isMatch ? disableCards() : unFlipCards();
+    // isMatch ? disableCards() : unFlipCards();
  
   }
 
 function disableCards () {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+
+    playerLives++
+      playerLivesCount.textContent = playerLives;
 
     resetBoard();
 }
@@ -60,6 +76,14 @@ function unFlipCards() {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
 
+   
+
+    playerLives--;
+    playerLivesCount.textContent = playerLives;
+     
+    if (playerLives === 0) {
+        playerLivesCount.textContent = 'You Lost'
+    } 
     resetBoard();
 
   }, 1500);
@@ -70,12 +94,7 @@ function resetBoard() {
   [secondCard,firstCard]
 }
 
-// (function shuffle(){
-//   cards.forEach(card => {
-//     let random = Math.floor(Math.random()*12);
-//     cards.style.order = random;
-//   });
-// })();
+
 
 (function shuffle() {
   cards.forEach(card => {
@@ -86,11 +105,6 @@ function resetBoard() {
 
 cards.forEach(card => card.addEventListener('click', flipCard))
 
-
-
-
-// let playerOneScore = 0;
-// let playerTwoScore =0; 
 
 
 
