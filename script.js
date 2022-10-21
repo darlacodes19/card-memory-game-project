@@ -1,9 +1,10 @@
-
 let gameBoard = document.querySelector('.game-display');
 let playerOneScore = document.querySelector('.firstPlayer');
 let playerTwoScore = document.querySelector('.secondPlayer')
 const playerLivesCount = document.querySelector('span');
 let button = document.querySelector('button');
+let playerOneName = document.querySelector('#player-one-name')
+let playerTwoName = document.querySelector('#player-two-name')
 
 let firstPlayerScore = 0;
 let secondPlayerScore = 0;
@@ -33,7 +34,7 @@ let secondCard;
 
 
 let firstPrompt = prompt('Player One, What is your Name? ');
-let secondPrompt = prompt ('Player two, what is your name?')
+let secondPrompt = prompt ('Player two, what is your name?');
 
 function alertPlayer () { 
   if (playerOneTurn = true) {
@@ -43,7 +44,11 @@ function alertPlayer () {
 
 setTimeout(alertPlayer,2000);
 
+playerOneName.textContent = "Player One: " + firstPrompt
+playerTwoName.textContent = "Player Two: " + secondPrompt
 
+playerOneScore.textContent = `${firstPrompt}:`
+playerTwoScore.textContent = `${secondPrompt}:`
 
 // add/remove flip class to card on click
 function flipCard() {
@@ -74,6 +79,7 @@ function flipCard() {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
     if (isMatch) {
+
       disableCards()
 
       cardsFlipped+=2
@@ -88,15 +94,12 @@ function flipCard() {
 
       if (playerId ===1){
         firstPlayerScore++
-        playerOneScore.textContent = firstPlayerScore;	
+        playerOneScore.textContent = `${firstPrompt}: ${firstPlayerScore}` ; 	
       } else {
         secondPlayerScore++
-        playerTwoScore.textContent = secondPlayerScore;
+        playerTwoScore.textContent = `${secondPrompt}: ${secondPlayerScore}`;
       }
      
-
-         ///// Check to see if the whole board is cleared/matched. If so, declare the winner!     
-             
      
     } else {
       unFlipCards()
@@ -167,7 +170,7 @@ function resetBoard() {
 
 
 
-////////  whose turn is it? 
+//////// Determines whose turn it is 
 let currentPlayer = function(){
 
   if (cardsFlipped === 16 ) {
@@ -202,13 +205,43 @@ function checkWinner () {
 
 
 
-function shuffle() {
-  resetBoard();
+(function shuffle() {
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
+})();
 
-  playerOneScore = 0;
-  playerTwoScore = 0;
-};
+
+button.addEventListener('click', reStartGame)
+
+function reStartGame () {
+  
+  if (cardsFlipped ===16) {
+  
+  cards.forEach(card => card.classList.remove('flip')) 
+
+  
+  playerOneScore.textContent = 0;
+  playerTwoScore.textContent = 0;
+  turnCount = 0;
+  cards.forEach(card => card.addEventListener('click', flipCard))
+
+  // shuffle();
+
+  // let firstPrompt = prompt('Player One, What is your Name? ');
+  // let secondPrompt = prompt ('Player two, what is your name?');
+
+  // setTimeout(alertPlayer,2000);
+
+  // flipCard();
+
+  }
+
+ 
+    
+  
+
+
+
+}
