@@ -150,6 +150,14 @@ button:active{
     color: white;
 }
 
+.player-one-name-active{
+   color: purple
+}
+
+.player-two-name-active{
+    color: purple
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;

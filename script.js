@@ -38,6 +38,7 @@ let secondPrompt = prompt ('Player two, what is your name?');
 
 function alertPlayer () { 
   if (playerOneTurn = true) {
+  playerOneName.classList.add("player-one-name-active")
   alert ( firstPrompt + ' ' + 'goes first')
 }
 }
@@ -179,12 +180,14 @@ let currentPlayer = function(){
 
   } else if (turnCount %2 === 0) { 
 		playerId = 1;
-		
+		playerOneName.classList.add("player-one-name-active")
+    playerTwoName.classList.remove("player-two-name-active")
     alert( firstPrompt + ' ' + 'goes next')
 		
 	} else {
 		playerId = 2;
-		
+    playerOneName.classList.remove("player-one-name-active")
+		playerTwoName.classList.add("player-two-name-active")
     alert ( secondPrompt + ' ' + 'goes next')
 };
 }
