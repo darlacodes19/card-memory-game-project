@@ -150,12 +150,47 @@ button:active{
     color: white;
 }
 
+#player-one-name {
+    margin-left: 650px;
+    font-size: 30px;
+    
+}
+
+#player-two-name {
+    margin-left: 1000px;
+    font-size: 30px;
+    
+}
+
 .player-one-name-active{
-   color: purple
+   margin-left: 650px;
+   font-size: 30px;
+   width: 150px;
+   color: #fff;
+   text-shadow:
+     0 0 7px #fff,
+     0 0 10px #fff,
+     0 0 21px #fff,
+     0 0 42px #0fa,
+     0 0 82px #0fa,
+     0 0 92px #0fa,
+     0 0 102px #0fa,
+     0 0 151px #0fa;
 }
 
 .player-two-name-active{
-    color: purple
+    margin-left: 1000px;
+    font-size: 30px;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
 }
 
 @keyframes gradient {

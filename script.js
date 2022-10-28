@@ -45,8 +45,8 @@ function alertPlayer () {
 
 setTimeout(alertPlayer,2000);
 
-playerOneName.textContent = "Player One: " + firstPrompt
-playerTwoName.textContent = "Player Two: " + secondPrompt
+playerOneName.textContent = firstPrompt
+playerTwoName.textContent =  secondPrompt
 
 playerOneScore.textContent = `${firstPrompt}:`
 playerTwoScore.textContent = `${secondPrompt}:`
