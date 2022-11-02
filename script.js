@@ -182,13 +182,13 @@ let currentPlayer = function(){
 		playerId = 1;
 		playerOneName.classList.add("player-one-name-active")
     playerTwoName.classList.remove("player-two-name-active")
-    alert( firstPrompt + ' ' + 'goes next')
+    // alert( firstPrompt + ' ' + 'goes next')
 		
 	} else {
 		playerId = 2;
     playerOneName.classList.remove("player-one-name-active")
 		playerTwoName.classList.add("player-two-name-active")
-    alert ( secondPrompt + ' ' + 'goes next')
+    // alert ( secondPrompt + ' ' + 'goes next')
 };
 }
 
