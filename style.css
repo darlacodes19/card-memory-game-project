@@ -167,20 +167,29 @@ button:active{
     color: white;
 }
 
+#player-names-display{
+    display: flex;
+    flex-direction: row;
+
+  
+}
+
 #player-one-name {
-    margin-left: 650px;
+    margin-left: 640px;
     font-size: 30px;
+    
     
 }
 
 #player-two-name {
-    margin-left: 1000px;
+    margin-left: 192px;
     font-size: 30px;
+   
     
 }
 
-.player-one-name-active{
-   margin-left: 650px;
+.player-one-name-active{   
+   margin-left: 640px;
    font-size: 30px;
    width: 150px;
    color: #fff;
@@ -196,7 +205,7 @@ button:active{
 }
 
 .player-two-name-active{
-    margin-left: 1000px;
+    margin-left: 192px;
     font-size: 30px;
     color: #fff;
     text-shadow:
