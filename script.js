@@ -208,12 +208,7 @@ function checkWinner () {
 
 
 
-(function shuffle() {
-  cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 12);
-    card.style.order = randomPos;
-  });
-})();
+
 
 
 button.addEventListener('click', reStartGame)
@@ -221,8 +216,10 @@ button.addEventListener('click', reStartGame)
 function reStartGame () {
   
   
-  
+  //flip cards
   cards.forEach(card => card.classList.remove('flip')) 
+  //need to shuffle card 
+  shuffle()
 
   
   playerOneScore.textContent = 0;
@@ -240,11 +237,13 @@ function reStartGame () {
   // flipCard();
 
   
-
- 
-    
-  
-
-
-
 }
+
+
+
+function shuffle() {
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
+  });
+};
