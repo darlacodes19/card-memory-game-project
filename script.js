@@ -36,6 +36,9 @@ let secondCard;
 let firstPrompt = prompt('Player One, What is your Name? ');
 let secondPrompt = prompt ('Player two, what is your name?');
 
+
+
+
 function alertPlayer () { 
   if (playerOneTurn = true) {
   playerOneName.classList.add("player-one-name-active")
@@ -51,7 +54,7 @@ playerTwoName.textContent =  secondPrompt
 playerOneScore.textContent = `${firstPrompt}:`
 playerTwoScore.textContent = `${secondPrompt}:`
 
-// add/remove flip class to card on click
+// add & remove flip class to card on click
 function flipCard() {
 
   
@@ -130,7 +133,7 @@ function flipCard() {
     // isMatch ? disableCards() : unFlipCards();
  
   
-
+//IF its a match, it doesn't allow you to flip again
 function disableCards () {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
@@ -140,6 +143,8 @@ function disableCards () {
 
     resetBoard();
 }
+
+//Unflips card -  if cards don't match if will flip back 
  
 function unFlipCards() {
    lockBoard = true; 
@@ -171,7 +176,7 @@ function resetBoard() {
 
 
 
-//////// Determines whose turn it is 
+// Determines whose turn it is 
 let currentPlayer = function(){
 
   if (cardsFlipped === 16 ) {
@@ -192,7 +197,7 @@ let currentPlayer = function(){
 };
 }
 
-
+//CHECKS WINNER
 
 function checkWinner () {
 
@@ -221,12 +226,19 @@ function reStartGame () {
   //need to shuffle card 
   shuffle()
 
-  
-  playerOneScore.textContent = 0;
-  playerTwoScore.textContent = 0;
+  //reset score board
+
+  firstPlayerScore = 0
+  secondPlayerScore = 0
+
+  playerOneScore.textContent = `${firstPrompt}: ${firstPlayerScore}` ; 	
+  playerTwoScore.textContent = `${secondPrompt}: ${secondPlayerScore}`;
+
   turnCount = 0;
   cards.forEach(card => card.addEventListener('click', flipCard))
 
+
+  alertPlayer();
   // shuffle();
 
   // let firstPrompt = prompt('Player One, What is your Name? ');
@@ -240,6 +252,7 @@ function reStartGame () {
 }
 
 
+//SHUFFLES CARD
 
 function shuffle() {
   cards.forEach(card => {
