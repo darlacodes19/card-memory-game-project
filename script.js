@@ -220,7 +220,7 @@ button.addEventListener('click', reStartGame)
 
 function reStartGame () {
   
-  if (cardsFlipped ===16) {
+  
   
   cards.forEach(card => card.classList.remove('flip')) 
 
@@ -239,7 +239,7 @@ function reStartGame () {
 
   // flipCard();
 
-  }
+  
 
  
     
