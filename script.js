@@ -48,6 +48,7 @@ function alertPlayer () {
 
 setTimeout(alertPlayer,2000);
 
+//What is this doing? 
 playerOneName.textContent = firstPrompt
 playerTwoName.textContent =  secondPrompt
 
@@ -239,6 +240,12 @@ function reStartGame () {
 
 
   alertPlayer();
+  checkForMatch();
+  currentPlayer();
+  
+
+
+
   // shuffle();
 
   // let firstPrompt = prompt('Player One, What is your Name? ');
