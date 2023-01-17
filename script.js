@@ -178,9 +178,9 @@ function resetBoard() {
 
 
 // Determines whose turn it is 
-let currentPlayer = function(){
+ function currentPlayer (){
 
-  if (cardsFlipped === 16 ) {
+  if (cardsFlipped === 16 && firstPlayerScore > 0 && secondPlayerScore > 0 ) {
 
     checkWinner();
 
@@ -221,27 +221,32 @@ button.addEventListener('click', reStartGame)
 
 function reStartGame () {
   
+    //reset score board
+
+    firstPlayerScore = 0
+    secondPlayerScore = 0
   
-  //flip cards
+  //flip cards facedown 
   cards.forEach(card => card.classList.remove('flip')) 
   //need to shuffle card 
   shuffle()
 
-  //reset score board
 
-  firstPlayerScore = 0
-  secondPlayerScore = 0
+ 
 
   playerOneScore.textContent = `${firstPrompt}: ${firstPlayerScore}` ; 	
   playerTwoScore.textContent = `${secondPrompt}: ${secondPlayerScore}`;
 
+  //set turn back to zero
   turnCount = 0;
   cards.forEach(card => card.addEventListener('click', flipCard))
 
-
+  playerOneTurn = true
   alertPlayer();
-  checkForMatch();
   currentPlayer();
+ 
+ 
+ 
   
 
 
