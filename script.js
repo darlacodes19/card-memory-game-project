@@ -180,7 +180,7 @@ function resetBoard() {
 // Determines whose turn it is 
  function currentPlayer (){
 
-  if (cardsFlipped === 16 && firstPlayerScore > 0 && secondPlayerScore > 0 ) {
+  if (cardsFlipped === 16 ) {
 
     checkWinner();
 
@@ -225,6 +225,9 @@ function reStartGame () {
 
     firstPlayerScore = 0
     secondPlayerScore = 0
+
+    //reset cards flipped variable 
+    cardsFlipped = 0
   
   //flip cards facedown 
   cards.forEach(card => card.classList.remove('flip')) 
@@ -244,9 +247,13 @@ function reStartGame () {
   playerOneTurn = true
   alertPlayer();
   currentPlayer();
+  
+
+
  
  
  
+
   
 
 
