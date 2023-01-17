@@ -46,7 +46,7 @@ function alertPlayer () {
 }
 }
 
-setTimeout(alertPlayer,2000);
+setTimeout(alertPlayer,1000);
 
 //What is this doing? 
 playerOneName.textContent = firstPrompt
