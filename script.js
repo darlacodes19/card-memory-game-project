@@ -2,7 +2,8 @@ let gameBoard = document.querySelector('.game-display');
 let playerOneScore = document.querySelector('.firstPlayer');
 let playerTwoScore = document.querySelector('.secondPlayer')
 const playerLivesCount = document.querySelector('span');
-let button = document.querySelector('button');
+const playAgainButton = document.querySelector('#play-again-btn');
+const newPlayersButton = document.querySelector('#new-players-btn');
 let playerOneName = document.querySelector('#player-one-name')
 let playerTwoName = document.querySelector('#player-two-name')
 
@@ -217,7 +218,7 @@ function checkWinner () {
 
 
 
-button.addEventListener('click', reStartGame)
+playAgainButton.addEventListener('click', reStartGame)
 
 function reStartGame () {
   
@@ -279,3 +280,12 @@ function shuffle() {
     card.style.order = randomPos;
   });
 };
+
+
+
+
+newPlayersButton.addEventListener('click', setNewPlayers)
+
+
+
+
