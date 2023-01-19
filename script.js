@@ -284,8 +284,23 @@ function shuffle() {
 
 
 
-newPlayersButton.addEventListener('click', setNewPlayers)
 
+
+const setNewPlayers = () => {
+ //set promt to ask for new names
+ firstPrompt = prompt('Player One, What is your Name? ');
+ secondPrompt = prompt ('Player two, what is your name?');
+
+ reStartGame()
+ //restart game 
+
+ //shuffle cards
+
+ //reset scoreboard
+
+}
+
+newPlayersButton.addEventListener('click', setNewPlayers)
 
 
 
