@@ -50,6 +50,7 @@ function alertPlayer () {
 setTimeout(alertPlayer,1000);
 
 //What is this doing? 
+  //Writing the player names at the top of the board
 playerOneName.textContent = firstPrompt
 playerTwoName.textContent =  secondPrompt
 
@@ -290,6 +291,9 @@ const setNewPlayers = () => {
  //set promt to ask for new names
  firstPrompt = prompt('Player One, What is your Name? ');
  secondPrompt = prompt ('Player two, what is your name?');
+
+ playerOneName.textContent = firstPrompt
+ playerTwoName.textContent =  secondPrompt
 
  reStartGame()
  //restart game 
