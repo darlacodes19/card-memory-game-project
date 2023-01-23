@@ -1,7 +1,8 @@
-let gameBoard = document.querySelector('.game-display');
+
+//for manipulating the DOM
+  //Updates player scores on the DOM
 let playerOneScore = document.querySelector('.firstPlayer');
 let playerTwoScore = document.querySelector('.secondPlayer')
-const playerLivesCount = document.querySelector('span');
 const playAgainButton = document.querySelector('#play-again-btn');
 const newPlayersButton = document.querySelector('#new-players-btn');
 let playerOneName = document.querySelector('#player-one-name')
@@ -9,13 +10,20 @@ let playerTwoName = document.querySelector('#player-two-name')
 
 let firstPlayerScore = 0;
 let secondPlayerScore = 0;
-let playerLives = 10;
+
+
 let playerOneTurn = true;
 let playerId = 1;
 let turnCount = 0;
 let cardsFlipped = 0;
 
-playerLivesCount.textContent = playerLives;
+
+let hasFlippedCard =false;
+let lockBoard = false;
+let firstCard;
+let secondCard;
+
+
 playerOneScore.textContent = firstPlayerScore;
 playerTwoScore.textContent = secondPlayerScore;
 
@@ -27,10 +35,6 @@ playerTwoScore.textContent = secondPlayerScore;
 const cards = document.querySelectorAll('.card');
 cards.forEach(card => card.addEventListener('click', flipCard))
 
-let hasFlippedCard =false;
-let lockBoard = false;
-let firstCard;
-let secondCard;
 
 
 let firstPrompt = prompt('Player One, What is your Name? ');
