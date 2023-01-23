@@ -10,7 +10,6 @@ let playerTwoName = document.querySelector('#player-two-name')
 let firstPlayerScore = 0;
 let secondPlayerScore = 0;
 let playerLives = 10;
-// let win = 0;
 let playerOneTurn = true;
 let playerId = 1;
 let turnCount = 0;
@@ -20,7 +19,7 @@ playerLivesCount.textContent = playerLives;
 playerOneScore.textContent = firstPlayerScore;
 playerTwoScore.textContent = secondPlayerScore;
 
-// let isMatch = firstCard.dataset.framework === secondCard.dataset.framework
+
 
 
 
@@ -56,6 +55,8 @@ playerTwoName.textContent =  secondPrompt
 
 playerOneScore.textContent = `${firstPrompt}:`
 playerTwoScore.textContent = `${secondPrompt}:`
+
+shuffle()
 
 // add & remove flip class to card on click
 function flipCard() {
@@ -114,12 +115,6 @@ function flipCard() {
       //// increase the turn count, switch players.
 					turnCount ++;
 					setTimeout(currentPlayer,500);
-      
-      // setTimeout( nextPlayer, 2000)
-
-      // function nextPlayer () {
-      //   alert(  'goes next')
-      // }
 
      }
 
@@ -133,16 +128,13 @@ function flipCard() {
 
 
     
-    // isMatch ? disableCards() : unFlipCards();
+   
  
   
 //IF its a match, it doesn't allow you to flip again
 function disableCards () {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-
-      // playerLives++
-      // playerLivesCount.textContent = playerLives;
 
     resetBoard();
 }
@@ -154,15 +146,6 @@ function unFlipCards() {
     setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
-
-   
-
-    // playerLives--;
-    // playerLivesCount.textContent = playerLives;
-     
-    // if (playerLives === 0) {
-    //     playerLivesCount.textContent = 'You Lost'
-    // } 
 
     resetBoard();
 
@@ -190,13 +173,13 @@ function resetBoard() {
 		playerId = 1;
 		playerOneName.classList.add("player-one-name-active")
     playerTwoName.classList.remove("player-two-name-active")
-    // alert( firstPrompt + ' ' + 'goes next')
+   
 		
 	} else {
 		playerId = 2;
     playerOneName.classList.remove("player-one-name-active")
 		playerTwoName.classList.add("player-two-name-active")
-    // alert ( secondPrompt + ' ' + 'goes next')
+   
 };
 }
 
@@ -251,24 +234,6 @@ function reStartGame () {
   currentPlayer();
   
 
-
- 
- 
- 
-
-  
-
-
-
-  // shuffle();
-
-  // let firstPrompt = prompt('Player One, What is your Name? ');
-  // let secondPrompt = prompt ('Player two, what is your name?');
-
-  // setTimeout(alertPlayer,2000);
-
-  // flipCard();
-
   
 }
 
@@ -296,11 +261,6 @@ const setNewPlayers = () => {
  playerTwoName.textContent =  secondPrompt
 
  reStartGame()
- //restart game 
-
- //shuffle cards
-
- //reset scoreboard
 
 }
 
