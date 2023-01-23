@@ -12,7 +12,7 @@ let secondPlayerScore = 0;
 let playerLives = 10;
 // let win = 0;
 let playerOneTurn = true;
-let playerId = null;
+let playerId = 1;
 let turnCount = 0;
 let cardsFlipped = 0;
 
