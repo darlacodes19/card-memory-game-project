@@ -1,23 +1,24 @@
 
-//for manipulating the DOM
-  //Updates player scores on the DOM
-let playerOneScore = document.querySelector('.firstPlayer');
-let playerTwoScore = document.querySelector('.secondPlayer')
+//MANIPULATING THE DOM
+  
 const playAgainButton = document.querySelector('#play-again-btn');
 const newPlayersButton = document.querySelector('#new-players-btn');
+//Updates player scores & names
+let playerOneScore = document.querySelector('.firstPlayer');
+let playerTwoScore = document.querySelector('.secondPlayer')
 let playerOneName = document.querySelector('#player-one-name')
 let playerTwoName = document.querySelector('#player-two-name')
 
+//OTHER VARIABLES
+  //keeps track of player scores 
 let firstPlayerScore = 0;
 let secondPlayerScore = 0;
-
-
+//???
 let playerOneTurn = true;
 let playerId = 1;
 let turnCount = 0;
+  //keeps track of the # of cards flipped - helpful for determining when the game is over 
 let cardsFlipped = 0;
-
-
 let hasFlippedCard =false;
 let lockBoard = false;
 let firstCard;
