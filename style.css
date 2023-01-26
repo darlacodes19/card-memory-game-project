@@ -160,7 +160,7 @@ span{
 #play-again-btn {
 
     position: absolute; 
-    right: 250px;
+    right: 13rem;
 }
 
 #play-again-btn:hover {
@@ -174,8 +174,8 @@ span{
 
 #new-players-btn {
    position: absolute;
-   top: 300px;
-   right: 200px;
+   top: 19rem;
+   right: 13rem;
 }
 
 #new-players-btn:hover {
