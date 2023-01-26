@@ -195,7 +195,7 @@ span{
 }
 
 #player-one-name {
-    margin-left: 680px;
+    margin-left: 510px;
     font-size: 30px;
    
     
@@ -210,7 +210,7 @@ span{
 }
 
 .player-one-name-active{   
-   margin-left: 680px;
+   margin-left: 510px;
    font-size: 30px;
    color: #fff;
    text-shadow:
