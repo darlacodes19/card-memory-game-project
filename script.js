@@ -1,9 +1,12 @@
 
 //MANIPULATING THE DOM
   
+  //button variables
 const playAgainButton = document.querySelector('#play-again-btn');
 const newPlayersButton = document.querySelector('#new-players-btn');
-//Updates player scores & names
+//cards
+const cards = document.querySelectorAll('.card');
+  // Variables to Updates player scores & names
 let playerOneScore = document.querySelector('.firstPlayer');
 let playerTwoScore = document.querySelector('.secondPlayer')
 let playerOneName = document.querySelector('#player-one-name')
@@ -13,54 +16,57 @@ let playerTwoName = document.querySelector('#player-two-name')
   //keeps track of player scores 
 let firstPlayerScore = 0;
 let secondPlayerScore = 0;
-//???
-let playerOneTurn = true;
+
+//used to determine which player to give points to 
 let playerId = 1;
+//used to keep track of whose turn it is 
 let turnCount = 0;
   //keeps track of the # of cards flipped - helpful for determining when the game is over 
 let cardsFlipped = 0;
+  //keeps track of if card was flipped
 let hasFlippedCard =false;
+
 let lockBoard = false;
+
+
+//to keep track of cards being flipped
 let firstCard;
 let secondCard;
 
 
-playerOneScore.textContent = firstPlayerScore;
-playerTwoScore.textContent = secondPlayerScore;
-
-
-
-
-
 // select all cards and create a function that that loops through and attaches an event listener to each card 
-const cards = document.querySelectorAll('.card');
+  //the event listener 
 cards.forEach(card => card.addEventListener('click', flipCard))
 
 
-
+  //1 - The game starts out by prompting each player to submit their names
+        // - The value of each answer is saved into a variable to be later used inside the scoreboard 
 let firstPrompt = prompt('Player One, What is your Name? ');
 let secondPrompt = prompt ('Player two, what is your name?');
 
+ //Writes the player names at the top of the board
+ playerOneName.textContent = firstPrompt
+ playerTwoName.textContent =  secondPrompt
+ 
+ //Writes name in scoreboard 
+ playerOneScore.textContent = `${firstPrompt}:`
+ playerTwoScore.textContent = `${secondPrompt}:`
 
-
-
+//2- After the first two prompts, the program alerts which player will take the first turn 
 function alertPlayer () { 
-  if (playerOneTurn = true) {
-  playerOneName.classList.add("player-one-name-active")
+  
+    //player one goes first
   alert ( firstPrompt + ' ' + 'goes first')
-}
+  //their name is highlighted 
+  playerOneName.classList.add("player-one-name-active")
+
 }
 
+  // the alertPlayer function will play after 1 second 
 setTimeout(alertPlayer,1000);
 
-//What is this doing? 
-  //Writing the player names at the top of the board
-playerOneName.textContent = firstPrompt
-playerTwoName.textContent =  secondPrompt
-
-playerOneScore.textContent = `${firstPrompt}:`
-playerTwoScore.textContent = `${secondPrompt}:`
-
+ 
+//shuffles card at the beggining of each game 
 shuffle()
 
 // add & remove flip class to card on click
@@ -87,6 +93,8 @@ function flipCard() {
   
   }
 
+  //checks to see if cards match 
+
   function checkForMatch() {
    
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
@@ -97,13 +105,9 @@ function flipCard() {
 
       cardsFlipped+=2
 
-     
-
       turnCount ++;
       
       setTimeout(currentPlayer,500);
-
-     
 
       if (playerId ===1){
         firstPlayerScore++
@@ -113,11 +117,11 @@ function flipCard() {
         playerTwoScore.textContent = `${secondPrompt}: ${secondPlayerScore}`;
       }
      
-     
+     //if its not a match 
     } else {
       unFlipCards()
 
-      //// increase the turn count, switch players.
+      // increase the turn count, switch players.
 					turnCount ++;
 					setTimeout(currentPlayer,500);
 
@@ -125,14 +129,6 @@ function flipCard() {
 
     
     }
-  
-  
-   
-      
-  
-
-
-    
    
  
   
@@ -161,10 +157,6 @@ function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false ];
   [secondCard,firstCard]
 }
-
-
-
-
 
 
 // Determines whose turn it is 
@@ -234,7 +226,7 @@ function reStartGame () {
   turnCount = 0;
   cards.forEach(card => card.addEventListener('click', flipCard))
 
-  playerOneTurn = true
+ 
   alertPlayer();
   currentPlayer();
   
