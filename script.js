@@ -216,9 +216,7 @@ function reStartGame () {
   //need to shuffle card 
   shuffle()
 
-
- 
-
+  //resetting scoreboard 
   playerOneScore.textContent = `${firstPrompt}: ${firstPlayerScore}` ; 	
   playerTwoScore.textContent = `${secondPrompt}: ${secondPlayerScore}`;
 
